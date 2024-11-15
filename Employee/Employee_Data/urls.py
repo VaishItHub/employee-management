@@ -1,13 +1,12 @@
 from django.urls import path
-from .views import *
-from django.contrib.auth import views as auth_views
+from . import views
+
 urlpatterns = [
-    path('list/',employee_list,name='employee_list'),
-    path('create/',employee_create,name='employee_create'),
-    path('<int:pk>/edit/',employee_update,name='employee_update'),
-    path('<int:pk>/delete/',employee_delete,name='employee_delete'),
-    path('register/',register,name='register'),
-    path('',auth_views.LoginView.as_view(template_name='login.html'),name='login'),
-    path('logout/',auth_views.LogoutView.as_view(),name='logout'),
-    
+    path('', views.employee_list, name='employee_list'),
+    path('employee/create/', views.employee_create, name='employee_create'),
+    path('employee/<int:pk>/update/', views.employee_update, name='employee_update'),
+    path('employee/<int:pk>/delete/', views.employee_delete, name='employee_delete'),
+    path('register/', views.register, name='register'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 ]

@@ -83,7 +83,7 @@
                 {{ emp.employee_name }} - {{ emp.employee_address }} - {{ emp.employee_phone_number }} - {{ emp.employee_email }}
             </div>
             <div>
-                <a href="{% url 'employee_update' emp.pk %}" class="button update-button">Edit</a>
+                <a href="{% url 'employee_update' emp.pk %}" class="button update-button">Edit</a><Br><Br>
                 <a href="{% url 'employee_delete' emp.pk %}" class="button edit-button" onclick="return confirm('Are you want to delete this Employee?')" >Delete</a>
             </div>
         </div>
